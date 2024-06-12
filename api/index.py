@@ -34,7 +34,7 @@ except ImportError as e:
 from glob import glob  # this is for serving any .pdf , .jpeg , .png etc media files
 
 
-class EndpointHandler(server.BaseHTTPRequestHandler):
+class handler(server.BaseHTTPRequestHandler):
     counter = 0
 
     def stream_handler(self):
