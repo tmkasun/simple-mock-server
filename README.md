@@ -1,24 +1,77 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fhello-world&demo-title=Python%20Hello%20World&demo-description=Use%20Python%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fpython-hello-world.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994600/random/python.png)
+# Mock Endpoint Server
+=========================
 
-# Python Hello World
+## Description
+---------------
 
-This example shows how to use Python on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+This is a mock endpoint server written in Python, designed for testing and mocking HTTP requests. It includes features such as streaming APIs, digest authentication, JWT decoding, and more.
+
+## Features
+--------
+
+* Streaming APIs
+* Digest authentication
+* JWT decoding
+* Support for various HTTP methods (GET, POST, PUT, DELETE, etc.)
+* Cache control headers
+* Access control headers (CORS)
+* Support for serving media files (PDF, JPEG, PNG, etc.)
+
+## Usage
+-----
+
+To run the server, simply execute the Python script. By default, it will listen on port 8080. You can test the server using a tool like `curl` or a web browser.
 
 ## Demo
+-----
 
-https://python-hello-world.vercel.app/
+A demo of this mock endpoint server is available at [mock.knnect.com](http://mock.knnect.com).
 
-## Running Locally
+## Other Implementations
+-----------------------
 
-```bash
-npm i -g vercel
-vercel dev
-```
+Other mock server implementations can be found at the [tmkasun/apim_pyclient](https://github.com/tmkasun/apim_pyclient) repository on GitHub.
 
-Your Python API is now available at `http://localhost:3000/api`.
+## Endpoints
+----------
 
-## One-Click Deploy
+* `/stream`: Streaming API endpoint
+* `/digestme`: Digest authentication test endpoint
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+## Query Parameters
+------------------
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fhello-world&demo-title=Python%20Hello%20World&demo-description=Use%20Python%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fpython-hello-world.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994600/random/python.png)
+* `sleep`: Simulates a delay in the server response time (in milliseconds)
+* `kdelay`: Simulates a delay in the server processing time (in milliseconds)
+
+## Headers
+---------
+
+* `Authorization`: Digest authentication header
+* `X-JWT-Assertion`: JWT decoding header
+
+## Dependencies
+------------
+
+* `python_digest`
+* `jwt`
+* `dicttoxml`
+
+## License
+-------
+
+This software is licensed under the MIT License.
+
+## Author
+------
+
+Kasun Thennakoon
+
+## Acknowledgments
+----------------
+
+This software uses the following third-party libraries:
+
+* `python_digest`
+* `jwt`
+* `dicttoxml`
