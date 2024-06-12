@@ -32,6 +32,7 @@ except ImportError as e:
         "WARN: Can't find dicttoxml module , Hence you won't able to use Application XML responses feature"
     )
 from glob import glob  # this is for serving any .pdf , .jpeg , .png etc media files
+from os.path import join
 
 
 class handler(server.BaseHTTPRequestHandler):
@@ -46,7 +47,7 @@ class handler(server.BaseHTTPRequestHandler):
         queries = parse_qs(urlparse(self.path).query)
         delay_time = queries.get("sleep")
 
-        with open("./resources/streaming.txt", "r") as file:
+        with open(join("data", "streaming.txt"), "r") as file:
             # Stream the file contents
             for line in file:
                 data = {"message": line.strip()}
@@ -252,7 +253,7 @@ class handler(server.BaseHTTPRequestHandler):
             if file_name.find("?") != -1:
                 file_name = file_name.split("?")[0]
             extention = file_name.split(".")[-1]
-            files = glob("./resources/*.{}".format(extention))
+            files = glob(join("data", "*.{}".format(extention)))
             if not len(files) == 0:
                 if (
                     extention == "gz"
