@@ -1,5 +1,6 @@
-requests
-python_digest
-jwt
-dicttoxml
-pprint
+requests==2.31.0
+
+# python_digest
+# jwt
+# dicttoxml
+# pprint
