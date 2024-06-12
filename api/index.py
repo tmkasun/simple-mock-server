@@ -138,11 +138,11 @@ class handler(server.BaseHTTPRequestHandler):
     def common_handler(self):
         self.body = False
         self.delayResponse()
-        if EndpointHandler.counter % 2 == 0:
+        if handler.counter % 2 == 0:
             self.setStatusCode(HTTPStatus.UNAUTHORIZED)
         else:
             self.setStatusCode()
-        EndpointHandler.counter += 1
+        handler.counter += 1
         # print(self.path)
         auth_params = self.decodeAuthHeader()
         """
@@ -271,18 +271,18 @@ class handler(server.BaseHTTPRequestHandler):
 
     @staticmethod
     def run():
-        port = EndpointHandler.port
+        port = handler.port
         print(
             "INFO: (Secured: {})Mock Endpoint Server listening on localhost:{}...".format(
-                EndpointHandler.secured, port
+                handler.secured, port
             )
         )
         socketserver.TCPServer.allow_reuse_address = True
-        httpd = server.ThreadingHTTPServer(("", port), EndpointHandler)
+        httpd = server.ThreadingHTTPServer(("", port), handler)
         # cert_path = path.dirname(__file__) + 'youryourpemfile.pem'
         cert_path = "certificates/knnect.cert.pem"
         print("DEBUG: cert_path = " + cert_path)
-        if EndpointHandler.secured:
+        if handler.secured:
             httpd.socket = ssl.wrap_socket(
                 httpd.socket, server_side=True, certfile=cert_path
             )
@@ -378,7 +378,7 @@ def main():
     """
     Run as a standalone server if needed
     """
-    EndpointHandler.run()
+    handler.run()
 
 
 if __name__ == "__main__":
