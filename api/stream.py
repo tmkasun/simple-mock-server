@@ -11,7 +11,7 @@ class handler(server.BaseHTTPRequestHandler):
 
     def stream_handler(self):
         self.send_response(HTTPStatus.OK)
-        self.send_header("Content-type", "text/event-stream")
+        self.send_header("Content-type", "application/json; charset=utf-8")
         self.send_header("Cache-Control", "no-cache")
         self.send_header("Connection", "keep-alive")
         self.end_headers()
