@@ -35,8 +35,19 @@ Other mock server implementations can be found at the [tmkasun/apim_pyclient](ht
 ## Endpoints
 ----------
 
-* `/stream`: Streaming API endpoint
-* `/digestme`: Digest authentication test endpoint
+* `/api/stream`: Streaming API endpoint
+* `/api/digestme`: Digest authentication test endpoint
+
+## Fetching Media Types
+----------------------
+
+You can fetch different media types by appending the file extension to the URL:
+
+* PNG: `https://mock.knnect.com/api/sample.png`
+* JPEG: `https://mock.knnect.com/api/sample.jpg`
+* PDF: `https://mock.knnect.com/api/sample.pdf`
+
+ Simply replace `sample` with your desired filename.
 
 ## Query Parameters
 ------------------
