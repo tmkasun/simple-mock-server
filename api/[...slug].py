@@ -261,7 +261,7 @@ class handler(server.BaseHTTPRequestHandler):
                     self.send_header("content-encoding", "gzip")
                     self.send_header("Content-type", "application/json")
                 elif extention == "html":
-                    self.send_header("Content-type", "text/xml")
+                    self.send_header("Content-type", "text/html; charset=utf-8")
                 else:
                     self.send_header("Content-type", "application/{}".format(extention))
                 with open(files[0], "rb") as file_response:
