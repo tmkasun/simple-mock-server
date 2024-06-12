@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Knnect Sample page</title>
-  </head>
-  <body>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-  </body>
+<html>
+
+<head>
+  <title>Mock HTTP Request Server</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Mock HTTP Request Server</h1>
+    <p>This server is for testing and mocking HTTP requests.</p>
+    <form>
+      <label for="method">Method:</label>
+      <select id="method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+      </select>
+      <label for="url">URL:</label>
+      <input type="text" id="url" placeholder="(link unavailable)">
+      <button type="submit">Send Request</button>
+    </form>
+    <div id="response"></div>
+  </div>
+</body>
+
 </html>
