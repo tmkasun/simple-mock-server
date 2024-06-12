@@ -2,7 +2,12 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/api/hello",
+      "destination": "/api/hello"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Credentials",
